@@ -13,7 +13,33 @@
         navButtonPress="onNavPress"
         showNavButton="true"
     >
+        <Panel>
+            <HBox justifyContent="Center">
+                <VBox>
+                    <SearchField
+                        id="SearchField1"
+                        width="auto"
+                        search="handleSearchEspec"
+                        placeholder="{i18n>eid}"
+                        showSearchButton="false"
+                    />
+                    <SearchField
+                        id="SearchField2"
+                        width="auto"
+                        search="handleSearchEspec"
+                        placeholder="{i18n>position}"
+                        showSearchButton="false"
+                    />
+                </VBox>
+                <HBox width="10px" />
+                <Button
+                    text="{i18n>buttonFilter}"
+                    press="onFilter"
+                />
+            </HBox>
+        </Panel>
         <Table
+            id="masterTable"
             mode="SingleSelectMaster"
             itemPress="handleListPress"
             headerText="{i18n>headerMaster}"

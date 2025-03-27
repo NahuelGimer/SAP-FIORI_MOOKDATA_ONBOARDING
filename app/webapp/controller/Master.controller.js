@@ -2,8 +2,11 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
     "sap/ui/core/UIComponent",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator",
     "../model/formatter"
-], (Controller, JSONModel, UIComponent, formatter) => {
+], (Controller, JSONModel, UIComponent, Filter,
+    FilterOperator, formatter) => {
     "use strict";
 
     return Controller.extend("constants.model.routes.controllers.Master", {
@@ -12,6 +15,21 @@ sap.ui.define([
             var oModel = new JSONModel();
             oModel.loadData("model/mockdata.json", {}, false);
             this.getView().setModel(oModel, "mEmployees");
+        },
+
+        onFilter: function () {
+            var filters = [];
+            var eid = this.getView().byId("SearchField1").getValue();
+            var position = this.getView().byId("SearchField2").getValue();
+            var tabla = this.getView().byId("masterTable");
+            var binding = tabla.getBinding("items");
+            if (eid && eid.length > 0) {
+                filters.push(new Filter("eid", FilterOperator.Contains, eid));
+            };
+            if (position && position.length > 0) {
+                filters.push(new Filter("cargo", FilterOperator.Contains, position));
+            };
+            binding.filter(filters);
         },
 
         handleListPress: function (oEvent) {

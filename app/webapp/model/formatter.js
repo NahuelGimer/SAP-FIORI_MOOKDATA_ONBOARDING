@@ -16,7 +16,7 @@ sap.ui.define([], function () {
             } else if (percentValue == 0) {
                 return "None";
             } else {
-                return "Warning";
+                return "Information";
             }
         },
         formatStateSelect1: function (statusValue) {
@@ -65,6 +65,19 @@ sap.ui.define([], function () {
                 return "The course is complete or in process";
             } else if (normalizedStatus === "error") {
                 return "The course is inactive or an issue occurs with its completeness";
+            } else {
+                return "";
+            }
+        },
+        formatStateTextSelect2: function (statusValue) {
+            if (!statusValue) {
+                return "Select a state";
+            }
+            var normalizedStatus = statusValue.toLowerCase();
+            if (normalizedStatus === "si" || normalizedStatus === "solicitado") {
+                return "The access has been required or obtained";
+            } else if (normalizedStatus === "no") {
+                return "The access is unavailable";
             } else {
                 return "";
             }

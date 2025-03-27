@@ -73,19 +73,19 @@
                             <ObjectStatus text="{mEmployee>prioridad}" state="{path:'mEmployee>prioridad', formatter:'.formatter.formatStatePriority'}" />
                             <Text text="{mEmployee>duracion}" />
                             <Text text="{mEmployee>comentarios}" />
-                            <Link text="{mEmployee>curso}" href="https://www.google.com"></Link>
+                            <Link text="{mEmployee>curso}" href="{mEmployee>link}"></Link>
                             <Select
                                 id="_IDGenSelect1"
                                 selectedKey="{mEmployee>status}"
-                                change="onEstadoChange"
-                                valueStateText="{path: 'mEmployee>status', formatter: '.formatter.formatStateTextSelect1'}"
+                                change="onChangeSelect1"
                                 valueState="{path: 'mEmployee>status', formatter: '.formatter.formatStateSelect1'}"
+                                valueStateText="{path: 'mEmployee>status', formatter: '.formatter.formatStateTextSelect1'}"
                             >
                                 <items>
                                     <core:Item
                                         id="_IDGenItem1"
                                         key="{mEmployee>estado}"
-                                        text="{mEmployee>estado}"
+                                        text="{mEmployee>status}"
                                     />
                                     <core:Item
                                         id="_IDGenItem2"
@@ -113,7 +113,7 @@
                                     />
                                 </items>
                             </Select>
-                            <Input />
+                            <Input valueLiveUpdate="true" liveChange=".onLiveChangeInputComment" maxLength="30"/>
                         </cells>
                     </ColumnListItem>
                 </items>
@@ -174,8 +174,8 @@
                     <ColumnListItem>
                         <cells>
                             <Text text="{mEmployee>solution}" />
-                            <Link text="{i18n>easyBill} {i18n>dev}" href="https://www.google.com"></Link>
-                            <Link text="{i18n>easyBill} {i18n>test}" href="https://www.google.com"></Link>
+                            <Link text="{i18n>easyBill} {i18n>dev}" href="{mEmployee>link}"></Link>
+                            <Link text="{i18n>easyBill} {i18n>test}" href="{mEmployee>link}"></Link>
                             <Text text="{mEmployee>area}" />
                             <Text text="{mEmployee>date}" />
                             <Text text="{mEmployee>presenters}" />
@@ -253,12 +253,13 @@
                             <Text text="{mEmployee>tableros}" />
                             <Text text="{mEmployee>adGroup}" />
                             <Text text="{mEmployee>why}" />
-                            <Link text="{mEmployee>name}" href="https://www.google.com"></Link>
+                            <Link text="{mEmployee>name}" href="{mEmployee>link}"></Link>
                             <Select
                                 id="_IDGenSelect2"
                                 selectedKey="{mEmployee>status}"
                                 change="onEstadoChange"
                                 valueState="{path: 'mEmployee>status', formatter: '.formatter.formatStateSelect2'}"
+                                valueStateText="{path: 'mEmployee>status', formatter: '.formatter.formatStateTextSelect2'}"
                             >
                                 <items>
                                     <core:Item
@@ -329,12 +330,13 @@
                         <cells>
                             <Text text="{mEmployee>subaccount}" />
                             <Text text="{mEmployee>space}" />
-                            <Link text="{mEmployee>space}" href="https://www.google.com"></Link>
+                            <Link text="{mEmployee>space}" href="{mEmployee>link}"></Link>
                             <Select
                                 id="_IDGenSelect3"
                                 selectedKey="{mEmployee>status}"
                                 change="onEstadoChange"
                                 valueState="{path: 'mEmployee>status', formatter: '.formatter.formatStateSelect2'}"
+                                valueStateText="{path: 'mEmployee>status', formatter: '.formatter.formatStateTextSelect2'}"
                             >
                                 <items>
                                     <core:Item
@@ -405,12 +407,13 @@
                         <cells>
                             <Text text="{mEmployee>name}" />
                             <Text text="{mEmployee>scope}" />
-                            <Link text="{mEmployee>name}" href="https://www.google.com"></Link>
+                            <Link text="{mEmployee>name}" href="{mEmployee>link}"></Link>
                             <Select
                                 id="_IDGenSelect4"
                                 selectedKey="{mEmployee>status}"
                                 change="onEstadoChange"
                                 valueState="{path: 'mEmployee>status', formatter: '.formatter.formatStateSelect2'}"
+                                valueStateText="{path: 'mEmployee>status', formatter: '.formatter.formatStateTextSelect2'}"
                             >
                                 <items>
                                     <core:Item
