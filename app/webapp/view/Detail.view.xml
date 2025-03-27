@@ -1,0 +1,447 @@
+<mvc:View
+    controllerName="app.controller.Detail"
+    xmlns:u="sap.ui.unified"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+>
+    <Page
+        id="tableOnBoardingDetail"
+        title="{i18n>onBoardingTitleApplication}"
+        navButtonPress="onNavPress"
+        showNavButton="true"
+    >
+        <Panel>
+            <HBox class="sapUiSmallMargin">
+                <Text text="{i18n>eid}: {mEmployee>/eid}" />
+                <HBox width="30px" />
+                <Text text="{i18n>position}: {mEmployee>/cargo}" />
+            </HBox>
+        </Panel>
+
+        <VBox class="sapUiMediumMargin">
+            <Text text="{i18n>trainings}" />
+            <HBox class="sapUiSmallMarginTop">
+                <Text text="{mEmployee>/trainings}%" />
+            </HBox>
+            <ProgressIndicator
+                visible="{ui>/showTrainings}"
+                percentValue="{mEmployee>/trainings}"
+                state="{path: 'mEmployee>/trainings', formatter: '.formatter.formatState'}"
+            />
+            <HBox class="sapUiTinyMargin">
+                <Title text="{i18n>courses}" />
+            </HBox>
+            <Table
+                mode="SingleSelectMaster"
+                itemPress="handleListPress"
+                items="{mEmployee>/courses}"
+            >
+                <columns>
+                    <Column>
+                        <Text text="{i18n>area}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>course}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>priority}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>duration}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>description}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>link}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>status}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>comment}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{mEmployee>area}" />
+                            <Text text="{mEmployee>curso}" />
+                            <ObjectStatus text="{mEmployee>prioridad}" state="{path:'mEmployee>prioridad', formatter:'.formatter.formatStatePriority'}" />
+                            <Text text="{mEmployee>duracion}" />
+                            <Text text="{mEmployee>comentarios}" />
+                            <Link text="{mEmployee>curso}" href="https://www.google.com"></Link>
+                            <Select
+                                id="_IDGenSelect1"
+                                selectedKey="{mEmployee>status}"
+                                change="onEstadoChange"
+                                valueStateText="{path: 'mEmployee>status', formatter: '.formatter.formatStateTextSelect1'}"
+                                valueState="{path: 'mEmployee>status', formatter: '.formatter.formatStateSelect1'}"
+                            >
+                                <items>
+                                    <core:Item
+                                        id="_IDGenItem1"
+                                        key="{mEmployee>estado}"
+                                        text="{mEmployee>estado}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem2"
+                                        key="{i18n>notInicializedSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>notInicializedSelection}}"
+                                        text="{i18n>notInicializedSelection}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem3"
+                                        key="{i18n>inProgressSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>inProgressSelection}}"
+                                        text="{i18n>inProgressSelection}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem4"
+                                        key="{i18n>errorSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>errorSelection}}"
+                                        text="{i18n>errorSelection}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem5"
+                                        key="{i18n>completedSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>completedSelection}}"
+                                        text="{i18n>completedSelection}"
+                                    />
+                                </items>
+                            </Select>
+                            <Input />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </VBox>
+
+        <VBox class="sapUiMediumMargin">
+            <Text text="{i18n>demos}" />
+            <HBox class="sapUiSmallMarginTop">
+                <Text text="{mEmployee>/demos}%" />
+            </HBox>
+            <ProgressIndicator
+                visible="{ui>/showDemos}"
+                percentValue="{mEmployee>/demos}"
+                state="{path: 'mEmployee>/demos', formatter: '.formatter.formatState'}"
+            />
+            <HBox class="sapUiTinyMargin">
+                <Title text="{i18n>demos}" />
+            </HBox>
+            <Table
+                mode="SingleSelectMaster"
+                itemPress="handleListPress"
+                items="{mEmployee>/demo}"
+            >
+                <columns>
+                    <Column>
+                        <Text text="{i18n>solutionName}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>urlDev}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>urlTest}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>area}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>date}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>presenters}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>functionalProgress}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>frontEndProgress}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>backEndProgress}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>summary}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{mEmployee>solution}" />
+                            <Link text="{i18n>easyBill} {i18n>dev}" href="https://www.google.com"></Link>
+                            <Link text="{i18n>easyBill} {i18n>test}" href="https://www.google.com"></Link>
+                            <Text text="{mEmployee>area}" />
+                            <Text text="{mEmployee>date}" />
+                            <Text text="{mEmployee>presenters}" />
+                            <ProgressIndicator
+                                visible="{ui>/showFunctional}"
+                                percentValue="{mEmployee>functionalProgress}"
+                                displayValue="{mEmployee>functionalProgress}%"
+                                state="{path: 'mEmployee>functionalProgress', formatter: '.formatter.formatStateDemos'}"
+                            />
+                            <ProgressIndicator
+                                visible="{ui>/showFrontEnd}"
+                                percentValue="{mEmployee>frontEndProgress}"
+                                displayValue="{mEmployee>frontEndProgress}%"
+                                state="{path: 'mEmployee>frontEndProgress', formatter: '.formatter.formatStateDemos'}"
+                            />
+                            <ProgressIndicator
+                                visible="{ui>/showBackEnd}"
+                                percentValue="{mEmployee>backEndProgress}"
+                                displayValue="{mEmployee>backEndProgress}%"
+                                state="{path: 'mEmployee>backEndProgress', formatter: '.formatter.formatStateDemos'}"
+                            />
+                            <Text text="{mEmployee>summary}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </VBox>
+
+        <VBox class="sapUiMediumMargin">
+            <Text text="{i18n>accessADO}" />
+            <HBox class="sapUiSmallMarginTop">
+                <Text text="{mEmployee>/ado}%" />
+            </HBox>
+            <ProgressIndicator
+                visible="{ui>/showADO}"
+                percentValue="{mEmployee>/ado}"
+                state="{path: 'mEmployee>/ado', formatter: '.formatter.formatState'}"
+            />
+            <HBox class="sapUiTinyMargin">
+                <Title text="{i18n>accessADO}" />
+            </HBox>
+            <Table
+                mode="SingleSelectMaster"
+                itemPress="handleListPress"
+                items="{mEmployee>/accesoAdo}"
+            >
+                <columns>
+                    <Column>
+                        <Text text="{i18n>name}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>scope}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>panels}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>adGroup}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>approach}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>link}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>status}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{mEmployee>name}" />
+                            <Text text="{mEmployee>scope}" />
+                            <Text text="{mEmployee>tableros}" />
+                            <Text text="{mEmployee>adGroup}" />
+                            <Text text="{mEmployee>why}" />
+                            <Link text="{mEmployee>name}" href="https://www.google.com"></Link>
+                            <Select
+                                id="_IDGenSelect2"
+                                selectedKey="{mEmployee>status}"
+                                change="onEstadoChange"
+                                valueState="{path: 'mEmployee>status', formatter: '.formatter.formatStateSelect2'}"
+                            >
+                                <items>
+                                    <core:Item
+                                        id="_IDGenItem6"
+                                        key="{mEmployee>status}"
+                                        text="{mEmployee>status}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem7"
+                                        key="{i18n>yesSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>yesSelection}}"
+                                        text="{i18n>yesSelection}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem8"
+                                        key="{i18n>noSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>noSelection}}"
+                                        text="{i18n>noSelection}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem9"
+                                        key="{i18n>solicitedSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>solicitedSelection}}"
+                                        text="{i18n>solicitedSelection}"
+                                    />
+                                </items>
+                            </Select>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </VBox>
+
+        <VBox class="sapUiMediumMargin">
+            <Text text="{i18n>accessBTP}" />
+            <HBox class="sapUiSmallMarginTop">
+                <Text text="{mEmployee>/btp}%" />
+            </HBox>
+            <ProgressIndicator
+                visible="{ui>/showBTP}"
+                percentValue="{mEmployee>/btp}"
+                state="{path: 'mEmployee>/btp', formatter: '.formatter.formatState'}"
+            />
+            <HBox class="sapUiTinyMargin">
+                <Title text="{i18n>accessBTP}" />
+            </HBox>
+            <Table
+                mode="SingleSelectMaster"
+                itemPress="handleListPress"
+                items="{mEmployee>/accesoBTP}"
+            >
+                <columns>
+                    <Column>
+                        <Text text="{i18n>subAccount}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>space}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>link}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>status}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{mEmployee>subaccount}" />
+                            <Text text="{mEmployee>space}" />
+                            <Link text="{mEmployee>space}" href="https://www.google.com"></Link>
+                            <Select
+                                id="_IDGenSelect3"
+                                selectedKey="{mEmployee>status}"
+                                change="onEstadoChange"
+                                valueState="{path: 'mEmployee>status', formatter: '.formatter.formatStateSelect2'}"
+                            >
+                                <items>
+                                    <core:Item
+                                        id="_IDGenItem10"
+                                        key="{mEmployee>status}"
+                                        text="{mEmployee>status}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem11"
+                                        key="{i18n>yesSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>yesSelection}}"
+                                        text="{i18n>yesSelection}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem12"
+                                        key="{i18n>noSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>noSelection}}"
+                                        text="{i18n>noSelection}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem13"
+                                        key="{i18n>solicitedSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>solicitedSelection}}"
+                                        text="{i18n>solicitedSelection}"
+                                    />
+                                </items>
+                            </Select>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </VBox>
+
+        <VBox class="sapUiMediumMargin">
+            <Text text="{i18n>accessSAP}" />
+            <HBox class="sapUiSmallMarginTop">
+                <Text text="{mEmployee>/sap}%" />
+            </HBox>
+            <ProgressIndicator
+                visible="{ui>/showSAP}"
+                percentValue="{mEmployee>/sap}"
+                state="{path: 'mEmployee>/sap', formatter: '.formatter.formatState'}"
+            />
+            <HBox class="sapUiTinyMargin">
+                <Title text="{i18n>accessSAP}" />
+            </HBox>
+            <Table
+                mode="SingleSelectMaster"
+                itemPress="handleListPress"
+                items="{mEmployee>/accesoSAP}"
+            >
+                <columns>
+                    <Column>
+                        <Text text="{i18n>name}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>scope}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>link}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>status}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{mEmployee>name}" />
+                            <Text text="{mEmployee>scope}" />
+                            <Link text="{mEmployee>name}" href="https://www.google.com"></Link>
+                            <Select
+                                id="_IDGenSelect4"
+                                selectedKey="{mEmployee>status}"
+                                change="onEstadoChange"
+                                valueState="{path: 'mEmployee>status', formatter: '.formatter.formatStateSelect2'}"
+                            >
+                                <items>
+                                    <core:Item
+                                        id="_IDGenItem14"
+                                        key="{mEmployee>status}"
+                                        text="{mEmployee>status}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem15"
+                                        key="{i18n>yesSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>yesSelection}}"
+                                        text="{i18n>yesSelection}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem16"
+                                        key="{i18n>noSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>noSelection}}"
+                                        text="{i18n>noSelection}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem17"
+                                        key="{i18n>solicitedSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>solicitedSelection}}"
+                                        text="{i18n>solicitedSelection}"
+                                    />
+                                </items>
+                            </Select>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </VBox>
+    </Page>
+</mvc:View>

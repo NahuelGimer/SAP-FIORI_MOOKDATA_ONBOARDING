@@ -1,0 +1,85 @@
+<mvc:View
+    controllerName="app.controller.Master"
+    xmlns:u="sap.ui.unified"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+>
+    <Page
+        id="tableOnBoardingMaster"
+        title="{i18n>onBoardingTitleApplication}"
+        navButtonPress="onNavPress"
+        showNavButton="true"
+    >
+        <Table
+            mode="SingleSelectMaster"
+            itemPress="handleListPress"
+            headerText="{i18n>headerMaster}"
+            items="{mEmployees>/employees}"
+        >
+            <columns>
+                <Column>
+                    <Text text="{i18n>eid}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>position}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>trainings}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>demos}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>accessADO}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>accessBTP}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>accessSAP}" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem type="Navigation">
+                    <cells>
+                        <Text text="{mEmployees>eid}" />
+                        <Text text="{mEmployees>cargo}" />
+                        <ProgressIndicator
+                            visible="{ui>/showTrainings}"
+                            percentValue="{mEmployees>trainings}"
+                            displayValue="{mEmployees>trainings}%"
+                            state="{path: 'mEmployees>trainings', formatter: '.formatter.formatState'}"
+                        />
+                        <ProgressIndicator
+                            visible="{ui>/showDemos}"
+                            percentValue="{mEmployees>demos}"
+                            displayValue="{mEmployees>demos}%"
+                            state="{path: 'mEmployees>demos', formatter: '.formatter.formatState'}"
+                        />
+                        <ProgressIndicator
+                            visible="{ui>/showADO}"
+                            percentValue="{mEmployees>ado}"
+                            displayValue="{mEmployees>ado}%"
+                            state="{path: 'mEmployees>ado', formatter: '.formatter.formatState'}"
+                        />
+                        <ProgressIndicator
+                            visible="{ui>/showBTP}"
+                            percentValue="{mEmployees>btp}"
+                            displayValue="{mEmployees>btp}%"
+                            state="{path: 'mEmployees>btp', formatter: '.formatter.formatState'}"
+                        />
+                        <ProgressIndicator
+                            visible="{ui>/showSAP}"
+                            percentValue="{mEmployees>sap}"
+                            displayValue="{mEmployees>sap}%"
+                            state="{path: 'mEmployees>sap', formatter: '.formatter.formatState'}"
+                        />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>

@@ -1,0 +1,137 @@
+{
+  "employees": [
+    {
+      "eid": "nahuel.gimer",
+      "cargo": "Desarrollador SAP UI5 Fiori",
+      "trainings": 100,
+      "demos": 75,
+      "ado": 50,
+      "btp": 25,
+      "sap": 0,
+      "courses": [
+        {
+          "area": "Advocate",
+          "curso": "When Arrie Met Bari",
+          "prioridad": "Muy Alta",
+          "duracion": "30m",
+          "comentarios": "Obligatorio",
+          "link": "Link",
+          "estado": "Completo"
+        },
+        {
+          "area": "Advocate",
+          "curso": "When Harrie Met Will II",
+          "prioridad": "Alta",
+          "duracion": "30m",
+          "comentarios": "Obligatorio",
+          "link": "Link",
+          "estado": "En Progreso"
+        },
+        {
+          "area": "TQs",
+          "curso": "AI",
+          "prioridad": "Media",
+          "duracion": "1h",
+          "comentarios": "Obligatorio",
+          "link": "Link",
+          "estado": "Error"
+        },
+        {
+          "area": "My Workday",
+          "curso": "COBE 1",
+          "prioridad": "Baja",
+          "duracion": "30m",
+          "comentarios": "Obligatorio",
+          "link": "Link",
+          "estado": "No Inicializado"
+        }
+      ],
+      "demo": [
+        {
+          "solution": "EasyBill (Contract Onboarding + Invoice Generation)",
+          "urlDev": "Link",
+          "urlTest": "Link",
+          "area": "OTC",
+          "date": "19-03-2025",
+          "presenters": "camila.lopez",
+          "functionalProgress": "100",
+          "frontEndProgress": "100",
+          "backEndProgress": "75",
+          "summary": "Aplicación EasyBill"
+        }
+      ],
+      "accesoAdo": [
+        {
+          "name": "SAP Platform",
+          "scope": "Cualquier trabajo",
+          "tableros": "SAPPlatform_PR1258",
+          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
+          "why": "Backlog de Trabajo",
+          "link": "Link",
+          "status": "Si"
+        },
+        {
+          "name": "OTC",
+          "scope": "McDonalds",
+          "tableros": "SAPPlatform_PR1258",
+          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
+          "why": "Backlog de Trabajo",
+          "link": "Link",
+          "status": "Solicitado"
+        },
+        {
+          "name": "Lease Accounting",
+          "scope": "REFX",
+          "tableros": "REFX",
+          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
+          "why": "Backlog de Trabajo",
+          "link": "Link",
+          "status": "No"
+        },
+        {
+          "name": "Mantenimiento BTP",
+          "scope": "BTP",
+          "tableros": "BusinessTechnologyPlatform_PR1208",
+          "adGroup": "CIO.AZDO.BusinessTechnologyPlatform.PR1208.Developers",
+          "why": "Backlog de Trabajo",
+          "link": "Link",
+          "status": "No"
+        }
+      ],
+      "accesoBTP": [
+        {
+          "subaccount": "Sandbox01",
+          "space": "dev-1",
+          "link": "Link",
+          "status": "Si"
+        },
+        {
+          "subaccount": "Sandbox02",
+          "space": "dev-1",
+          "link": "Link",
+          "status": "No"
+        },
+        {
+          "subaccount": "Test01",
+          "space": "OTC-Test",
+          "link": "Link",
+          "status": "No"
+        },
+        {
+          "subaccount": "Test02",
+          "space": "OTC-Test",
+          "link": "Link",
+          "status": "No"
+        }
+      ],
+      "accesoSAP": [
+        {
+          "name": "SAP Logon",
+          "scope": "Gain SAP Logon Program And Access",
+          "link": "Link",
+          "status": "No"
+        }
+      ]
+    }
+  ]
+}
