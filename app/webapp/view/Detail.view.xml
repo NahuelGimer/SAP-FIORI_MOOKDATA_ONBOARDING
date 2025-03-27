@@ -70,10 +70,16 @@
                         <cells>
                             <Text text="{mEmployee>area}" />
                             <Text text="{mEmployee>curso}" />
-                            <ObjectStatus text="{mEmployee>prioridad}" state="{path:'mEmployee>prioridad', formatter:'.formatter.formatStatePriority'}" />
+                            <ObjectStatus
+                                text="{mEmployee>prioridad}"
+                                state="{path:'mEmployee>prioridad', formatter:'.formatter.formatStatePriority'}"
+                            />
                             <Text text="{mEmployee>duracion}" />
                             <Text text="{mEmployee>comentarios}" />
-                            <Link text="{mEmployee>curso}" href="{mEmployee>link}"></Link>
+                            <Link
+                                text="{mEmployee>curso}"
+                                href="{mEmployee>link}"
+                            />
                             <Select
                                 id="_IDGenSelect1"
                                 selectedKey="{mEmployee>status}"
@@ -113,7 +119,11 @@
                                     />
                                 </items>
                             </Select>
-                            <Input valueLiveUpdate="true" liveChange=".onLiveChangeInputComment" maxLength="30"/>
+                            <Input
+                                valueLiveUpdate="true"
+                                liveChange=".onLiveChangeInputComment"
+                                maxLength="30"
+                            />
                         </cells>
                     </ColumnListItem>
                 </items>
@@ -174,8 +184,14 @@
                     <ColumnListItem>
                         <cells>
                             <Text text="{mEmployee>solution}" />
-                            <Link text="{i18n>easyBill} {i18n>dev}" href="{mEmployee>link}"></Link>
-                            <Link text="{i18n>easyBill} {i18n>test}" href="{mEmployee>link}"></Link>
+                            <Link
+                                text="{i18n>easyBill} {i18n>dev}"
+                                href="{mEmployee>link}"
+                            />
+                            <Link
+                                text="{i18n>easyBill} {i18n>test}"
+                                href="{mEmployee>link}"
+                            />
                             <Text text="{mEmployee>area}" />
                             <Text text="{mEmployee>date}" />
                             <Text text="{mEmployee>presenters}" />
@@ -253,7 +269,10 @@
                             <Text text="{mEmployee>tableros}" />
                             <Text text="{mEmployee>adGroup}" />
                             <Text text="{mEmployee>why}" />
-                            <Link text="{mEmployee>name}" href="{mEmployee>link}"></Link>
+                            <Link
+                                text="{mEmployee>name}"
+                                href="{mEmployee>link}"
+                            />
                             <Select
                                 id="_IDGenSelect2"
                                 selectedKey="{mEmployee>status}"
@@ -330,7 +349,10 @@
                         <cells>
                             <Text text="{mEmployee>subaccount}" />
                             <Text text="{mEmployee>space}" />
-                            <Link text="{mEmployee>space}" href="{mEmployee>link}"></Link>
+                            <Link
+                                text="{mEmployee>space}"
+                                href="{mEmployee>link}"
+                            />
                             <Select
                                 id="_IDGenSelect3"
                                 selectedKey="{mEmployee>status}"
@@ -407,7 +429,10 @@
                         <cells>
                             <Text text="{mEmployee>name}" />
                             <Text text="{mEmployee>scope}" />
-                            <Link text="{mEmployee>name}" href="{mEmployee>link}"></Link>
+                            <Link
+                                text="{mEmployee>name}"
+                                href="{mEmployee>link}"
+                            />
                             <Select
                                 id="_IDGenSelect4"
                                 selectedKey="{mEmployee>status}"
