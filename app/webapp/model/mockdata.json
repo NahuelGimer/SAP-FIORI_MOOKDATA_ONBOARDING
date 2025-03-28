@@ -48,7 +48,7 @@
       ],
       "demo": [
         {
-          "solution": "EasyBill (Contract Onboarding + Invoice Generation)",
+          "solution": "EasyBill",
           "urlDev": "https://www.google.com",
           "urlTest": "https://www.google.com",
           "area": "OTC",
@@ -181,7 +181,7 @@
       ],
       "demo": [
         {
-          "solution": "REFX (Lease Accounting)",
+          "solution": "REFX",
           "urlDev": "Link",
           "urlTest": "Link",
           "area": "REFX",

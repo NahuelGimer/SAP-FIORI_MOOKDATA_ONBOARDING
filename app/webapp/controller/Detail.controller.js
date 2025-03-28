@@ -1,7 +1,8 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
+    "sap/ui/core/Fragment",
     "../model/formatter"
-], (BaseController, formatter) => {
+], (BaseController, Fragment, formatter) => {
     "use strict";
 
     return BaseController.extend("constants.model.routes.controllers.Master", {
@@ -36,5 +37,36 @@ sap.ui.define([
                 }
             }, 1000);
         },
+
+        handleResizablePopoverPress: function (oEvent) {
+            var oButton = oEvent.getSource(),
+                oView = this.getView(),
+                oModel = this.getOwnerComponent().getModel("mEmployee"); // Obtener el modelo mEmployee
+            var oSelectedEmployee = oModel.getData([0]); // Suponiendo que el primer empleado es el seleccionado
+
+            // Crear el popover solo una vez
+            if (!this._pResizablePopover) {
+                this._pResizablePopover = Fragment.load({
+                    id: oView.getId(),
+                    name: "app.utils.fragments.nomenclatureDialog",
+                    controller: this
+                }).then(function (oPopover) {
+                    oView.addDependent(oPopover);
+
+                    // Enlazar el popover con el contexto del empleado
+                    oPopover.setBindingContext(new sap.ui.model.Context(oModel, "/0")); // Enlazar al primer empleado
+                    return oPopover;
+                });
+            }
+
+            // Abrir el popover
+            this._pResizablePopover.then(function (oPopover) {
+                oPopover.openBy(oButton);
+            });
+        },
+
+        handleClose: function () {
+            this.byId("myResizablePopover").close();
+        }
     });
 });

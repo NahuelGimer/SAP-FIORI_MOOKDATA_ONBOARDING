@@ -41,7 +41,7 @@
             >
                 <columns>
                     <Column>
-                        <Text text="{i18n>area}" />
+                        <Text text="{i18n>area}"  />
                     </Column>
                     <Column>
                         <Text text="{i18n>course}" />
@@ -68,7 +68,9 @@
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Text text="{mEmployee>area}" />
+                            <Button press=".handleResizablePopoverPress"
+					        text="{mEmployee>area}"
+					        ariaHasPopup="Dialog" />
                             <Text text="{mEmployee>curso}" />
                             <ObjectStatus
                                 text="{mEmployee>prioridad}"
@@ -183,7 +185,9 @@
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Text text="{mEmployee>solution}" />
+                            <Button press=".handleResizablePopoverPress"
+					        text="{mEmployee>solution}"
+					        ariaHasPopup="Dialog" />
                             <Link
                                 text="{i18n>easyBill} {i18n>dev}"
                                 href="{mEmployee>link}"
@@ -264,7 +268,9 @@
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Text text="{mEmployee>name}" />
+                            <Button press=".handleResizablePopoverPress"
+					        text="{mEmployee>name}"
+					        ariaHasPopup="Dialog" />
                             <Text text="{mEmployee>scope}" />
                             <Text text="{mEmployee>tableros}" />
                             <Text text="{mEmployee>adGroup}" />
@@ -427,7 +433,9 @@
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Text text="{mEmployee>name}" />
+                            <Button press=".handleResizablePopoverPress"
+					        text="{mEmployee>name}"
+					        ariaHasPopup="Dialog" />
                             <Text text="{mEmployee>scope}" />
                             <Link
                                 text="{mEmployee>name}"
