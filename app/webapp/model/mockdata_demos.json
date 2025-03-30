@@ -1,0 +1,63 @@
+{
+    "demos": [
+        {
+            "solution": "EasyBill1",
+            "urlDev": "https://www.google.com",
+            "urlTest": "https://www.google.com",
+            "area": "OTC",
+            "date": "19-03-2025",
+            "presenters": "camila.lopez",
+            "functionalProgress": "100",
+            "frontEndProgress": "100",
+            "backEndProgress": "75",
+            "summary": "Aplicación EasyBill"
+        },
+        {
+            "solution": "REFX1",
+            "urlDev": "Link",
+            "urlTest": "Link",
+            "area": "REFX",
+            "date": "19-03-2025",
+            "presenters": "juan.perez",
+            "functionalProgress": "100",
+            "frontEndProgress": "100",
+            "backEndProgress": "75",
+            "summary": "Aplicación REFX"
+        },
+        {
+            "solution": "EasyBill2",
+            "urlDev": "https://www.google.com",
+            "urlTest": "https://www.google.com",
+            "area": "OTC",
+            "date": "19-03-2025",
+            "presenters": "camila.lopez",
+            "functionalProgress": "100",
+            "frontEndProgress": "100",
+            "backEndProgress": "75",
+            "summary": "Aplicación EasyBill"
+        },{
+            "solution": "REFX2",
+            "urlDev": "Link",
+            "urlTest": "Link",
+            "area": "REFX",
+            "date": "19-03-2025",
+            "presenters": "juan.perez",
+            "functionalProgress": "100",
+            "frontEndProgress": "100",
+            "backEndProgress": "75",
+            "summary": "Aplicación REFX"
+        },
+        {
+            "solution": "EasyBill3",
+            "urlDev": "https://www.google.com",
+            "urlTest": "https://www.google.com",
+            "area": "OTC",
+            "date": "19-03-2025",
+            "presenters": "camila.lopez",
+            "functionalProgress": "100",
+            "frontEndProgress": "100",
+            "backEndProgress": "75",
+            "summary": "Aplicación EasyBill"
+        }
+    ]
+}

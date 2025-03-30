@@ -34,16 +34,20 @@
                 <HBox width="10px" />
                 <Button
                     text="{i18n>buttonFilter}"
-                    press="onFilter"
+                    press="onFilter1"
                 />
             </HBox>
         </Panel>
+
         <Table
-            id="masterTable"
+            id="masterTable1"
             mode="SingleSelectMaster"
-            itemPress="handleListPress"
-            headerText="{i18n>headerMaster}"
+            itemPress="handleListPress1"
+            headerText="{i18n>headerMaster1}"
             items="{mEmployees>/employees}"
+            growing="true"
+            growingThreshold="3"
+            growingScrollToLoad="false"
         >
             <columns>
                 <Column>
@@ -54,9 +58,6 @@
                 </Column>
                 <Column>
                     <Text text="{i18n>trainings}" />
-                </Column>
-                <Column>
-                    <Text text="{i18n>demos}" />
                 </Column>
                 <Column>
                     <Text text="{i18n>accessADO}" />
@@ -75,34 +76,132 @@
                         <Text text="{mEmployees>cargo}" />
                         <ProgressIndicator
                             visible="{ui>/showTrainings}"
-                            percentValue="{mEmployees>trainings}"
-                            displayValue="{mEmployees>trainings}%"
-                            state="{path: 'mEmployees>trainings', formatter: '.formatter.formatState'}"
-                        />
-                        <ProgressIndicator
-                            visible="{ui>/showDemos}"
-                            percentValue="{mEmployees>demos}"
-                            displayValue="{mEmployees>demos}%"
-                            state="{path: 'mEmployees>demos', formatter: '.formatter.formatState'}"
+                            percentValue="{mEmployees>progressTrainings}"
+                            displayValue="{mEmployees>progressTrainings}%"
+                            state="{path: 'mEmployees>progressTrainings', formatter: '.formatter.formatState'}"
                         />
                         <ProgressIndicator
                             visible="{ui>/showADO}"
-                            percentValue="{mEmployees>ado}"
-                            displayValue="{mEmployees>ado}%"
-                            state="{path: 'mEmployees>ado', formatter: '.formatter.formatState'}"
+                            percentValue="{mEmployees>progressADO}"
+                            displayValue="{mEmployees>progressADO}%"
+                            state="{path: 'mEmployees>progressADO', formatter: '.formatter.formatState'}"
                         />
                         <ProgressIndicator
                             visible="{ui>/showBTP}"
-                            percentValue="{mEmployees>btp}"
-                            displayValue="{mEmployees>btp}%"
-                            state="{path: 'mEmployees>btp', formatter: '.formatter.formatState'}"
+                            percentValue="{mEmployees>progressBTP}"
+                            displayValue="{mEmployees>progressBTP}%"
+                            state="{path: 'mEmployees>progressBTP', formatter: '.formatter.formatState'}"
                         />
                         <ProgressIndicator
                             visible="{ui>/showSAP}"
-                            percentValue="{mEmployees>sap}"
-                            displayValue="{mEmployees>sap}%"
-                            state="{path: 'mEmployees>sap', formatter: '.formatter.formatState'}"
+                            percentValue="{mEmployees>progressSAP}"
+                            displayValue="{mEmployees>progressSAP}%"
+                            state="{path: 'mEmployees>progressSAP', formatter: '.formatter.formatState'}"
                         />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+
+        <Panel>
+            <HBox justifyContent="Center">
+                <VBox>
+                    <SearchField
+                        id="SearchField3"
+                        width="auto"
+                        search="handleSearchEspec"
+                        placeholder="{i18n>solutionName}"
+                        showSearchButton="false"
+                    />
+                </VBox>
+                <HBox width="10px" />
+                <Button
+                    text="{i18n>buttonFilter}"
+                    press="onFilter2"
+                />
+            </HBox>
+        </Panel>
+
+        <Table
+            id="masterTable2"
+            mode="SingleSelectMaster"
+            itemPress="handleListPress2"
+            headerText="{i18n>headerMaster2}"
+            items="{mDemos>/demos}"
+            growing="true"
+            growingThreshold="3"
+            growingScrollToLoad="false"
+        >
+            <columns>
+                <Column>
+                    <Text text="{i18n>solutionName}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>urlDev}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>urlTest}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>area}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>date}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>presenters}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>functionalProgress}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>frontEndProgress}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>backEndProgress}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>summary}" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem type="Navigation">
+                    <cells>
+                        <Button
+                            press=".handleResizablePopoverPress"
+                            text="{mDemos>solution}"
+                            ariaHasPopup="Dialog"
+                        />
+                        <Link
+                            text="{i18n>easyBill} {i18n>dev}"
+                            href="{mDemos>link}"
+                        />
+                        <Link
+                            text="{i18n>easyBill} {i18n>test}"
+                            href="{mDemos>link}"
+                        />
+                        <Text text="{mDemos>area}" />
+                        <Text text="{mDemos>date}" />
+                        <Text text="{mDemos>presenters}" />
+                        <ProgressIndicator
+                            visible="{ui>/showFunctional}"
+                            percentValue="{mDemos>functionalProgress}"
+                            displayValue="{mDemos>functionalProgress}%"
+                            state="{path: 'mDemos>functionalProgress', formatter: '.formatter.formatStateDemos'}"
+                        />
+                        <ProgressIndicator
+                            visible="{ui>/showFrontEnd}"
+                            percentValue="{mDemos>frontEndProgress}"
+                            displayValue="{mDemos>frontEndProgress}%"
+                            state="{path: 'mDemos>frontEndProgress', formatter: '.formatter.formatStateDemos'}"
+                        />
+                        <ProgressIndicator
+                            visible="{ui>/showBackEnd}"
+                            percentValue="{mDemos>backEndProgress}"
+                            displayValue="{mDemos>backEndProgress}%"
+                            state="{path: 'mDemos>backEndProgress', formatter: '.formatter.formatStateDemos'}"
+                        />
+                        <Text text="{mDemos>summary}" />
                     </cells>
                 </ColumnListItem>
             </items>

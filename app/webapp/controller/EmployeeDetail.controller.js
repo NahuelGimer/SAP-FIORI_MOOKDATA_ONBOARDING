@@ -5,7 +5,7 @@ sap.ui.define([
 ], (BaseController, Fragment, formatter) => {
     "use strict";
 
-    return BaseController.extend("constants.model.routes.controllers.Master", {
+    return BaseController.extend("constants.model.routes.controllers.EmployeeDetail", {
         formatter: formatter,
         onInit() {
         },

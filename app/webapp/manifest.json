@@ -57,6 +57,12 @@
 				"settings": {},
 				"uri": "mEmployee.json",
 				"preload": false
+			},
+			"mDemo": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "mDemo.json",
+				"preload": false
 			}
     },
     "resources": {
@@ -87,10 +93,17 @@
           ]
         },
         {
-          "name": "RouteDetail",
-          "pattern": "Detail",
+          "name": "RouteEmployeeDetail",
+          "pattern": "EmployeeDetail",
           "target": [
-            "TargetDetail"
+            "TargetEmployeeDetail"
+          ]
+        },
+        {
+          "name": "RouteDemoDetail",
+          "pattern": "DemoDetail",
+          "target": [
+            "TargetDemoDetail"
           ]
         }
       ],
@@ -99,9 +112,13 @@
           "id": "Master",
           "name": "Master"
         },
-        "TargetDetail": {
-          "id": "Detail",
-          "name": "Detail"
+        "TargetEmployeeDetail": {
+          "id": "EmployeeDetail",
+          "name": "EmployeeDetail"
+        },
+        "TargetDemoDetail": {
+          "id": "DemoDetail",
+          "name": "DemoDetail"
         }
       }
     },

@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="app.controller.Detail"
+    controllerName="app.controller.EmployeeDetail"
     xmlns:u="sap.ui.unified"
     xmlns:l="sap.ui.layout"
     xmlns:core="sap.ui.core"
@@ -8,7 +8,7 @@
     displayBlock="true"
 >
     <Page
-        id="tableOnBoardingDetail"
+        id="tableOnBoardingEmployeeDetail"
         title="{i18n>onBoardingTitleApplication}"
         navButtonPress="onNavPress"
         showNavButton="true"
@@ -24,12 +24,12 @@
         <VBox class="sapUiMediumMargin">
             <Text text="{i18n>trainings}" />
             <HBox class="sapUiSmallMarginTop">
-                <Text text="{mEmployee>/trainings}%" />
+                <Text text="{mEmployee>/progressTrainings}%" />
             </HBox>
             <ProgressIndicator
                 visible="{ui>/showTrainings}"
-                percentValue="{mEmployee>/trainings}"
-                state="{path: 'mEmployee>/trainings', formatter: '.formatter.formatState'}"
+                percentValue="{mEmployee>/progressTrainings}"
+                state="{path: 'mEmployee>/progressTrainings', formatter: '.formatter.formatState'}"
             />
             <HBox class="sapUiTinyMargin">
                 <Title text="{i18n>courses}" />
@@ -81,6 +81,7 @@
                             <Link
                                 text="{mEmployee>curso}"
                                 href="{mEmployee>link}"
+                                target="_blank"
                             />
                             <Select
                                 id="_IDGenSelect1"
@@ -133,106 +134,14 @@
         </VBox>
 
         <VBox class="sapUiMediumMargin">
-            <Text text="{i18n>demos}" />
-            <HBox class="sapUiSmallMarginTop">
-                <Text text="{mEmployee>/demos}%" />
-            </HBox>
-            <ProgressIndicator
-                visible="{ui>/showDemos}"
-                percentValue="{mEmployee>/demos}"
-                state="{path: 'mEmployee>/demos', formatter: '.formatter.formatState'}"
-            />
-            <HBox class="sapUiTinyMargin">
-                <Title text="{i18n>demos}" />
-            </HBox>
-            <Table
-                mode="SingleSelectMaster"
-                itemPress="handleListPress"
-                items="{mEmployee>/demo}"
-            >
-                <columns>
-                    <Column>
-                        <Text text="{i18n>solutionName}" />
-                    </Column>
-                    <Column>
-                        <Text text="{i18n>urlDev}" />
-                    </Column>
-                    <Column>
-                        <Text text="{i18n>urlTest}" />
-                    </Column>
-                    <Column>
-                        <Text text="{i18n>area}" />
-                    </Column>
-                    <Column>
-                        <Text text="{i18n>date}" />
-                    </Column>
-                    <Column>
-                        <Text text="{i18n>presenters}" />
-                    </Column>
-                    <Column>
-                        <Text text="{i18n>functionalProgress}" />
-                    </Column>
-                    <Column>
-                        <Text text="{i18n>frontEndProgress}" />
-                    </Column>
-                    <Column>
-                        <Text text="{i18n>backEndProgress}" />
-                    </Column>
-                    <Column>
-                        <Text text="{i18n>summary}" />
-                    </Column>
-                </columns>
-                <items>
-                    <ColumnListItem>
-                        <cells>
-                            <Button press=".handleResizablePopoverPress"
-					        text="{mEmployee>solution}"
-					        ariaHasPopup="Dialog" />
-                            <Link
-                                text="{i18n>easyBill} {i18n>dev}"
-                                href="{mEmployee>link}"
-                            />
-                            <Link
-                                text="{i18n>easyBill} {i18n>test}"
-                                href="{mEmployee>link}"
-                            />
-                            <Text text="{mEmployee>area}" />
-                            <Text text="{mEmployee>date}" />
-                            <Text text="{mEmployee>presenters}" />
-                            <ProgressIndicator
-                                visible="{ui>/showFunctional}"
-                                percentValue="{mEmployee>functionalProgress}"
-                                displayValue="{mEmployee>functionalProgress}%"
-                                state="{path: 'mEmployee>functionalProgress', formatter: '.formatter.formatStateDemos'}"
-                            />
-                            <ProgressIndicator
-                                visible="{ui>/showFrontEnd}"
-                                percentValue="{mEmployee>frontEndProgress}"
-                                displayValue="{mEmployee>frontEndProgress}%"
-                                state="{path: 'mEmployee>frontEndProgress', formatter: '.formatter.formatStateDemos'}"
-                            />
-                            <ProgressIndicator
-                                visible="{ui>/showBackEnd}"
-                                percentValue="{mEmployee>backEndProgress}"
-                                displayValue="{mEmployee>backEndProgress}%"
-                                state="{path: 'mEmployee>backEndProgress', formatter: '.formatter.formatStateDemos'}"
-                            />
-                            <Text text="{mEmployee>summary}" />
-                        </cells>
-                    </ColumnListItem>
-                </items>
-            </Table>
-        </VBox>
-
-        <VBox class="sapUiMediumMargin">
             <Text text="{i18n>accessADO}" />
             <HBox class="sapUiSmallMarginTop">
-                <Text text="{mEmployee>/ado}%" />
+                <Text text="{mEmployee>/progressADO}%" />
             </HBox>
             <ProgressIndicator
                 visible="{ui>/showADO}"
-                percentValue="{mEmployee>/ado}"
-                state="{path: 'mEmployee>/ado', formatter: '.formatter.formatState'}"
+                percentValue="{mEmployee>/progressADO}"
+                state="{path: 'mEmployee>/progressADO', formatter: '.formatter.formatState'}"
             />
             <HBox class="sapUiTinyMargin">
                 <Title text="{i18n>accessADO}" />
@@ -240,7 +149,7 @@
             <Table
                 mode="SingleSelectMaster"
                 itemPress="handleListPress"
-                items="{mEmployee>/accesoAdo}"
+                items="{mEmployee>/accesoADO}"
             >
                 <columns>
                     <Column>
@@ -278,6 +187,7 @@
                             <Link
                                 text="{mEmployee>name}"
                                 href="{mEmployee>link}"
+                                target="_blank"
                             />
                             <Select
                                 id="_IDGenSelect2"
@@ -321,12 +231,12 @@
         <VBox class="sapUiMediumMargin">
             <Text text="{i18n>accessBTP}" />
             <HBox class="sapUiSmallMarginTop">
-                <Text text="{mEmployee>/btp}%" />
+                <Text text="{mEmployee>/progressBTP}%" />
             </HBox>
             <ProgressIndicator
                 visible="{ui>/showBTP}"
-                percentValue="{mEmployee>/btp}"
-                state="{path: 'mEmployee>/btp', formatter: '.formatter.formatState'}"
+                percentValue="{mEmployee>/progressBTP}"
+                state="{path: 'mEmployee>/progressBTP', formatter: '.formatter.formatState'}"
             />
             <HBox class="sapUiTinyMargin">
                 <Title text="{i18n>accessBTP}" />
@@ -358,6 +268,7 @@
                             <Link
                                 text="{mEmployee>space}"
                                 href="{mEmployee>link}"
+                                target="_blank"
                             />
                             <Select
                                 id="_IDGenSelect3"
@@ -401,12 +312,12 @@
         <VBox class="sapUiMediumMargin">
             <Text text="{i18n>accessSAP}" />
             <HBox class="sapUiSmallMarginTop">
-                <Text text="{mEmployee>/sap}%" />
+                <Text text="{mEmployee>/progressSAP}%" />
             </HBox>
             <ProgressIndicator
                 visible="{ui>/showSAP}"
-                percentValue="{mEmployee>/sap}"
-                state="{path: 'mEmployee>/sap', formatter: '.formatter.formatState'}"
+                percentValue="{mEmployee>/progressSAP}"
+                state="{path: 'mEmployee>/progressSAP', formatter: '.formatter.formatState'}"
             />
             <HBox class="sapUiTinyMargin">
                 <Title text="{i18n>accessSAP}" />
@@ -440,6 +351,7 @@
                             <Link
                                 text="{mEmployee>name}"
                                 href="{mEmployee>link}"
+                                target="_blank"
                             />
                             <Select
                                 id="_IDGenSelect4"

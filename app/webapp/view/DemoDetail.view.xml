@@ -1,0 +1,40 @@
+<mvc:View
+    controllerName="app.controller.DemoDetail"
+    xmlns:u="sap.ui.unified"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+>
+    <Page
+        id="tableOnBoardingDemoDetail"
+        title="{i18n>onBoardingTitleApplication}"
+        navButtonPress="onNavPress"
+        showNavButton="true"
+    >
+        <Panel>
+            <HBox class="sapUiSmallMargin">
+                <Text text="{i18n>solutionName}: {mDemo>/solution}" />
+                <HBox width="30px" />
+                <Text text="{i18n>urlDev}: {mDemo>/urlDev}" />
+                <HBox width="30px" />
+                <Text text="{i18n>urlTest}: {mDemo>/urlTest}" />
+                <HBox width="30px" />
+                <Text text="{i18n>area}: {mDemo>/area}" />
+                <HBox width="30px" />
+                <Text text="{i18n>date}: {mDemo>/date}" />
+                <HBox width="30px" />
+                <Text text="{i18n>presenters}: {mDemo>/presenters}" />
+                <HBox width="30px" />
+                <Text text="{i18n>functionalProgress}: {mDemo>/functionalProgress}" />
+                <HBox width="30px" />
+                <Text text="{i18n>frontEndProgress}: {mDemo>/frontEndProgress}" />
+                <HBox width="30px" />
+                <Text text="{i18n>backEndProgress}: {mDemo>/backEndProgress}" />
+                <HBox width="30px" />
+                <Text text="{i18n>summary}: {mDemo>/summary}" />
+            </HBox>
+        </Panel>
+    </Page>
+</mvc:View>

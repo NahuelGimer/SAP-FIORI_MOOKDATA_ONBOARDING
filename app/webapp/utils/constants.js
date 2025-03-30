@@ -6,7 +6,8 @@ sap.ui.define([], function () {
                 controllers: {
                     App: "app.controller.App",
                     Master: "app.controller.Master",
-                    Detail: "app.controller.Detail"
+                    Detail: "app.controller.EmployeeDetail",
+                    Detail: "app.controller.DemoDetail"
                 }
             }
         }
