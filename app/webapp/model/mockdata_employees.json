@@ -3,9 +3,6 @@
     {
       "eid": "camila.lopez",
       "cargo": "Desarrollador UI5",
-      "demos": 75,
-      "btp": 25,
-      "sap": 0,
       "courses": [
         {
           "area": "Advocate",
@@ -120,11 +117,6 @@
     {
       "eid": "juan.perez",
       "cargo": "Consultor SAP",
-      "trainings": 100,
-      "demos": 75,
-      "ado": 50,
-      "btp": 25,
-      "sap": 0,
       "courses": [
         {
           "area": "Advocate",
@@ -239,11 +231,6 @@
     {
       "eid": "pablo.ramirez",
       "cargo": "Desarrollador UI5",
-      "trainings": 100,
-      "demos": 75,
-      "ado": 50,
-      "btp": 25,
-      "sap": 0,
       "courses": [
         {
           "area": "Advocate",
@@ -358,11 +345,6 @@
     {
       "eid": "tomas.gomez",
       "cargo": "Consultor SAP",
-      "trainings": 100,
-      "demos": 75,
-      "ado": 50,
-      "btp": 25,
-      "sap": 0,
       "courses": [
         {
           "area": "Advocate",
@@ -477,11 +459,6 @@
     {
       "eid": "jonathan.perez",
       "cargo": "Desarrollador UI5",
-      "trainings": 100,
-      "demos": 75,
-      "ado": 50,
-      "btp": 25,
-      "sap": 0,
       "courses": [
         {
           "area": "Advocate",
