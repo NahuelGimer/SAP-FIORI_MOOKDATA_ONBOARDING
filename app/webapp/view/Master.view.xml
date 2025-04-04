@@ -15,26 +15,30 @@
     >
         <Panel>
             <HBox justifyContent="Center">
-                <VBox>
-                    <SearchField
-                        id="SearchField1"
-                        width="auto"
-                        search="handleSearchEspec"
-                        placeholder="{i18n>eid}"
-                        showSearchButton="false"
-                    />
-                    <SearchField
-                        id="SearchField2"
-                        width="auto"
-                        search="handleSearchEspec"
-                        placeholder="{i18n>position}"
-                        showSearchButton="false"
-                    />
-                </VBox>
+                <SearchField
+                    id="SearchField1"
+                    width="auto"
+                    search="handleSearchEspec"
+                    placeholder="{i18n>eid}"
+                    showSearchButton="false"
+                />
                 <HBox width="10px" />
                 <Button
-                    text="{i18n>buttonFilter}"
+                    text="{i18n>buttonFilterEID}"
                     press="onFilter1"
+                />
+                <HBox width="10px" />
+                <SearchField
+                    id="SearchField3"
+                    width="auto"
+                    search="handleSearchEspec"
+                    placeholder="{i18n>solutionName}"
+                    showSearchButton="false"
+                />
+                <HBox width="10px" />
+                <Button
+                    text="{i18n>buttonFilterSolution}"
+                    press="onFilter2"
                 />
             </HBox>
         </Panel>
@@ -54,9 +58,6 @@
                     <Text text="{i18n>eid}" />
                 </Column>
                 <Column>
-                    <Text text="{i18n>position}" />
-                </Column>
-                <Column>
                     <Text text="{i18n>trainings}" />
                 </Column>
                 <Column>
@@ -68,17 +69,20 @@
                 <Column>
                     <Text text="{i18n>accessSAP}" />
                 </Column>
+
+                <Column>
+                    <Text text="{i18n>accessSAPAmbient}" />
+                </Column>
             </columns>
             <items>
                 <ColumnListItem type="Navigation">
                     <cells>
-                        <Text text="{mEmployees>eid}" />
-                        <Text text="{mEmployees>cargo}" />
+                        <Text text="{mEmployees>employee_eid}" />
                         <ProgressIndicator
                             visible="{ui>/showTrainings}"
-                            percentValue="{mEmployees>progressTrainings}"
-                            displayValue="{mEmployees>progressTrainings}%"
-                            state="{path: 'mEmployees>progressTrainings', formatter: '.formatter.formatState'}"
+                            percentValue="{mEmployees>progressTraining}"
+                            displayValue="{mEmployees>progressTraining}%"
+                            state="{path: 'mEmployees>progressTraining', formatter: '.formatter.formatState'}"
                         />
                         <ProgressIndicator
                             visible="{ui>/showADO}"
@@ -94,33 +98,20 @@
                         />
                         <ProgressIndicator
                             visible="{ui>/showSAP}"
-                            percentValue="{mEmployees>progressSAP}"
-                            displayValue="{mEmployees>progressSAP}%"
-                            state="{path: 'mEmployees>progressSAP', formatter: '.formatter.formatState'}"
+                            percentValue="{mEmployees>progressSAPAccess}"
+                            displayValue="{mEmployees>progressSAPAccess}%"
+                            state="{path: 'mEmployees>progressSAPAccess', formatter: '.formatter.formatState'}"
+                        />
+                        <ProgressIndicator
+                            visible="{ui>/showSAP}"
+                            percentValue="{mEmployees>progressSAPAmbient}"
+                            displayValue="{mEmployees>progressSAPAmbient}%"
+                            state="{path: 'mEmployees>progressSAPAmbient', formatter: '.formatter.formatState'}"
                         />
                     </cells>
                 </ColumnListItem>
             </items>
         </Table>
-
-        <Panel>
-            <HBox justifyContent="Center">
-                <VBox>
-                    <SearchField
-                        id="SearchField3"
-                        width="auto"
-                        search="handleSearchEspec"
-                        placeholder="{i18n>solutionName}"
-                        showSearchButton="false"
-                    />
-                </VBox>
-                <HBox width="10px" />
-                <Button
-                    text="{i18n>buttonFilter}"
-                    press="onFilter2"
-                />
-            </HBox>
-        </Panel>
 
         <Table
             id="masterTable2"
@@ -167,11 +158,7 @@
             <items>
                 <ColumnListItem type="Navigation">
                     <cells>
-                        <Button
-                            press=".handleResizablePopoverPress"
-                            text="{mDemos>solution}"
-                            ariaHasPopup="Dialog"
-                        />
+                        <Text text="{mDemos>solution}" />
                         <Link
                             text="{i18n>easyBill} {i18n>dev}"
                             href="{mDemos>link}"

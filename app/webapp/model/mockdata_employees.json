@@ -1,572 +1,336 @@
 {
   "employees": [
     {
-      "eid": "camila.lopez",
-      "cargo": "Desarrollador UI5",
-      "courses": [
+      "employee_eid": "camila.lopez",
+      "job_title": "Desarrollador UI5",
+      "progressTraining": 100,
+      "progressADO": 100,
+      "progressBTP": 100,
+      "progressSAPAccess": 100,
+      "progressSAPAmbient": 100,
+      "Trainings": [
         {
-          "area": "Advocate",
-          "curso": "When Arrie Met Bari",
-          "prioridad": "Muy Alta",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "Completo"
+          "training_id": 1,
+          "task": "Advocate",
+          "subtask": "When Arrie Met Bari",
+          "priority": "Muy Alta",
+          "duration": "30m",
+          "url": {
+            "link": "https://wd103.myworkday.com/wday/authgwy/accenture/login.htmld?returnTo=%2faccenture%2flearning%2fcourse%2fbec1f37e45011000c62c2fc33fae0000%3frecord%3d3525f459675710018ddd1823d0b80000%26amp%3btype%3d9882927d138b100019b928e75843018d",
+            "name": "When Arrie Met Bari"
+          },
+          "status": "Completo",
+          "comment": ""
         },
         {
-          "area": "Advocate",
-          "curso": "When Harrie Met Will II",
-          "prioridad": "Alta",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
+          "training_id": 2,
+          "task": "TQs",
+          "subtask": "AI 0",
+          "priority": "Alta",
+          "duration": "30m",
+          "url": {
+            "name": "AI 0",
+            "link": "https://app.pluralsight.com/id/signin/sso"
+          },
+          "status": "Completo",
+          "comment": ""
+        }
+        ,
+        {
+          "training_id": 3,
+          "task": "TQs",
+          "subtask": "AI 1",
+          "priority": "Media",
+          "duration": "30m",
+          "url": {
+            "name": "AI 1",
+            "link": "https://app.pluralsight.com/id/signin/sso"
+          },
+          "status": "Completo",
+          "comment": ""
         },
         {
-          "area": "TQs",
-          "curso": "AI",
-          "prioridad": "Media",
-          "duracion": "1h",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
-        },
-        {
-          "area": "My Workday",
-          "curso": "COBE 1",
-          "prioridad": "Baja",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
+          "training_id": 4,
+          "task": "TQs",
+          "subtask": "AI 2",
+          "priority": "Baja",
+          "duration": "30m",
+          "url": {
+            "name": "AI 2",
+            "link": "https://app.pluralsight.com/id/signin/sso"
+          },
+          "status": "Completo",
+          "comment": ""
         }
       ],
-      "accesoADO": [
+      "ADOPermissions": [
         {
-          "name": "SAP Platform",
+          "ado_access_id": 1,
+          "resource_name": "SAP Platform",
           "scope": "Cualquier trabajo",
-          "tableros": "SAPPlatform_PR1258",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "Si"
-        },
-        {
-          "name": "OTC",
-          "scope": "McDonalds",
-          "tableros": "SAPPlatform_PR1258",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "Solicitado"
-        },
-        {
-          "name": "Lease Accounting",
-          "scope": "REFX",
-          "tableros": "REFX",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "No"
-        },
-        {
-          "name": "Mantenimiento BTP",
-          "scope": "BTP",
-          "tableros": "BusinessTechnologyPlatform_PR1208",
-          "adGroup": "CIO.AZDO.BusinessTechnologyPlatform.PR1208.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "No"
+          "ad_group": "CIO.AZDO.SAPPlatform.PR1258.Developers",
+          "panel": "SAPPlatform_PR1258",
+          "approach": "Backlog de Trabajo",
+          "url": {
+              "name": "Ado Permissions",
+              "link": "https://dev.azure.com/accenturecio23/SAPPlatform_PR1258/_workitems/assignedtome/"
+            },
+          "status": "Si",
+          "comment": ""
         }
       ],
-      "accesoBTP": [
+      "BTPPermissions": [
         {
+          "btp_access_id": 1,
           "subaccount": "Sandbox01",
           "space": "dev-1",
-          "link": "https://www.google.com",
-          "status": "Si"
-        },
-        {
-          "subaccount": "Sandbox02",
-          "space": "dev-1",
-          "link": "https://www.google.com",
-          "status": "No"
-        },
-        {
-          "subaccount": "Test01",
-          "space": "OTC-Test",
-          "link": "https://www.google.com",
-          "status": "No"
-        },
-        {
-          "subaccount": "Test02",
-          "space": "OTC-Test",
-          "link": "https://www.google.com",
-          "status": "No"
+          "url": {
+            "link": "https://amer.cockpit.btp.cloud.sap/cockpit/?idp=avvsp8xpi.accounts.ondemand.com#/globalaccount/c56c0143-bc3b-4c20-be33-a4fb06b059a8/subaccount/d7cd42e9-d5c5-46f6-9e30-f667c5a1696f/org/b92a06c7-d44d-4d7d-b8bd-50590ebf4a8f/space/0f19ad14-5c4f-463e-91bd-9886a628e3ff/applications",
+            "name": "Sandbox 01"
+          },
+          "status": "Si",
+          "comment": ""
         }
       ],
-      "accesoSAP": [
+      "SAPAccessPermissionsDetails": [
         {
-          "name": "SAP Logon",
-          "scope": "Gain SAP Logon Program And Access",
-          "link": "https://www.google.com",
-          "status": "No"
+          "permission_id": 1,
+          "title": "Sandbox 01",
+          "url": {
+            "link": "link",
+            "name": "Sandbox 01"
+          },
+          "status": "Si",
+          "comment": ""
+        }
+      ],
+      "SSAPAmbientPermissionsDetails": [
+        {
+          "permission_id": 1,
+          "project": "RD1-1",
+          "environment": "RD1-1",
+          "client": "MDT01",
+          "version": "V2021",
+          "due_date": "20-20-2020",
+          "priority": "Muy Alta",
+          "url": {
+              "link": "link",
+              "name": "Sandbox 01"
+            },
+          "status": "Si",
+          "comment": ""
+        },
+        {
+          "permission_id": 2,
+          "project": "RD1-2",
+          "environment": "RD1-2",
+          "client": "MDT01",
+          "version": "V2021",
+          "due_date": "20-20-2020",
+          "priority": "Alta",
+          "url": {
+              "link": "link",
+              "name": "Sandbox 01"
+            },
+          "status": "Si",
+          "comment": ""
+        },
+        {
+          "permission_id": 3,
+          "project": "RD1-3",
+          "environment": "RD1-3",
+          "client": "MDT01",
+          "version": "V2021",
+          "due_date": "20-20-2020",
+          "priority": "Media",
+          "url": {
+              "link": "link",
+              "name": "Sandbox 01"
+            },
+          "status": "Si",
+          "comment": ""
+        },
+        {
+          "permission_id": 4,
+          "project": "RD1-4",
+          "environment": "RD1-4",
+          "client": "MDT01",
+          "version": "V2021",
+          "due_date": "20-20-2020",
+          "priority": "Baja",
+          "url": {
+            "link": "link",
+            "name": "Sandbox 01"
+          },
+          "status": "Si",
+          "comment": ""
         }
       ]
     },
     {
-      "eid": "juan.perez",
-      "cargo": "Consultor SAP",
-      "courses": [
-        {
-          "area": "Advocate",
-          "curso": "When Arrie Met Bari",
-          "prioridad": "Muy Alta",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "Completo"
-        },
-        {
-          "area": "Advocate",
-          "curso": "When Harrie Met Will II",
-          "prioridad": "Alta",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
-        },
-        {
-          "area": "TQs",
-          "curso": "AI",
-          "prioridad": "Media",
-          "duracion": "1h",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
-        },
-        {
-          "area": "My Workday",
-          "curso": "COBE 1",
-          "prioridad": "Baja",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
-        }
+      "employee_eid": "juan.perez",
+      "job_title": "Desarrollador UI5",
+      "progressTraining": 100,
+      "progressADO": 100,
+      "progressBTP": 100,
+      "progressSAPAccess": 100,
+      "progressSAPAmbient": 100,
+      "Trainings": [
+          {
+              "training_id": 5,
+              "task": "Advocate",
+              "subtask": "When Arrie Met Bari",
+              "priority": "Muy Alta",
+              "duration": "30m",
+              "url": {
+                "link": "https://wd103.myworkday.com/wday/authgwy/accenture/login.htmld?returnTo=%2faccenture%2flearning%2fcourse%2fbec1f37e45011000c62c2fc33fae0000%3frecord%3d3525f459675710018ddd1823d0b80000%26amp%3btype%3d9882927d138b100019b928e75843018d",
+                "name": "When Arrie Met Bari"
+              },
+              "status": "Completo",
+              "comment": ""
+            },
+            {
+              "training_id": 6,
+              "task": "TQs",
+              "subtask": "AI 0",
+              "priority": "Alta",
+              "duration": "30m",
+              "url": {
+                "name": "AI 0",
+                "link": "https://app.pluralsight.com/id/signin/sso"
+              },
+              "status": "Completo",
+              "comment": ""
+            }
+            ,
+            {
+              "training_id": 7,
+              "task": "TQs",
+              "subtask": "AI 1",
+              "priority": "Media",
+              "duration": "30m",
+              "url": {
+                "name": "AI 1",
+                "link": "https://app.pluralsight.com/id/signin/sso"
+              },
+              "status": "Completo",
+              "comment": ""
+            },
+            {
+              "training_id": 8,
+              "task": "TQs",
+              "subtask": "AI 2",
+              "priority": "Baja",
+              "duration": "30m",
+              "url": {
+                "name": "AI 2",
+                "link": "https://app.pluralsight.com/id/signin/sso"
+              },
+              "status": "Completo",
+              "comment": ""
+            }
       ],
-      "accesoADO": [
+      "ADOPermissions": [
         {
-          "name": "SAP Platform",
+          "ado_access_id": 2,
+          "resource_name": "SAP Platform",
           "scope": "Cualquier trabajo",
-          "tableros": "SAPPlatform_PR1258",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "Si"
-        },
-        {
-          "name": "OTC",
-          "scope": "McDonalds",
-          "tableros": "SAPPlatform_PR1258",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "Solicitado"
-        },
-        {
-          "name": "Lease Accounting",
-          "scope": "REFX",
-          "tableros": "REFX",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "No"
-        },
-        {
-          "name": "Mantenimiento BTP",
-          "scope": "BTP",
-          "tableros": "BusinessTechnologyPlatform_PR1208",
-          "adGroup": "CIO.AZDO.BusinessTechnologyPlatform.PR1208.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "No"
+          "ad_group": "CIO.AZDO.SAPPlatform.PR1258.Developers",
+          "panel": "SAPPlatform_PR1258",
+          "approach": "Backlog de Trabajo",
+          "url": {
+              "name": "Ado Permissions",
+              "link": "https://dev.azure.com/accenturecio23/SAPPlatform_PR1258/_workitems/assignedtome/"
+            },
+          "status": "Si",
+          "comment": ""
         }
       ],
-      "accesoBTP": [
+      "BTPPermissions": [
         {
+          "btp_access_id": 2,
           "subaccount": "Sandbox01",
           "space": "dev-1",
-          "link": "https://www.google.com",
-          "status": "Si"
-        },
-        {
-          "subaccount": "Sandbox02",
-          "space": "dev-1",
-          "link": "https://www.google.com",
-          "status": "No"
-        },
-        {
-          "subaccount": "Test01",
-          "space": "OTC-Test",
-          "link": "https://www.google.com",
-          "status": "No"
-        },
-        {
-          "subaccount": "Test02",
-          "space": "OTC-Test",
-          "link": "https://www.google.com",
-          "status": "No"
+          "url": {
+            "link": "https://amer.cockpit.btp.cloud.sap/cockpit/?idp=avvsp8xpi.accounts.ondemand.com#/globalaccount/c56c0143-bc3b-4c20-be33-a4fb06b059a8/subaccount/d7cd42e9-d5c5-46f6-9e30-f667c5a1696f/org/b92a06c7-d44d-4d7d-b8bd-50590ebf4a8f/space/0f19ad14-5c4f-463e-91bd-9886a628e3ff/applications",
+            "name": "Sandbox 01"
+          },
+          "status": "Si",
+          "comment": ""
         }
       ],
-      "accesoSAP": [
+      "SAPAccessPermissionsDetails": [
         {
-          "name": "SAP Logon",
-          "scope": "Gain SAP Logon Program And Access",
-          "link": "https://www.google.com",
-          "status": "No"
-        }
-      ]
-    },
-    {
-      "eid": "pablo.ramirez",
-      "cargo": "Desarrollador UI5",
-      "courses": [
-        {
-          "area": "Advocate",
-          "curso": "When Arrie Met Bari",
-          "prioridad": "Muy Alta",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "Completo"
-        },
-        {
-          "area": "Advocate",
-          "curso": "When Harrie Met Will II",
-          "prioridad": "Alta",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
-        },
-        {
-          "area": "TQs",
-          "curso": "AI",
-          "prioridad": "Media",
-          "duracion": "1h",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
-        },
-        {
-          "area": "My Workday",
-          "curso": "COBE 1",
-          "prioridad": "Baja",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
+          "permission_id": 2,
+          "title": "Sandbox 01",
+          "url": {
+            "link": "link",
+            "name": "Sandbox 01"
+          },
+          "status": "Si",
+          "comment": ""
         }
       ],
-      "accesoADO": [
+      "SSAPAmbientPermissionsDetails": [
         {
-          "name": "SAP Platform",
-          "scope": "Cualquier trabajo",
-          "tableros": "SAPPlatform_PR1258",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "Si"
+          "permission_id": 5,
+          "project": "RD1-1",
+          "environment": "RD1-1",
+          "client": "MDT01",
+          "version": "V2021",
+          "due_date": "20-20-2020",
+          "priority": "Muy Alta",
+          "url": {
+            "link": "link",
+            "name": "Sandbox 01"
+          },
+          "status": "Si",
+          "comment": ""
         },
         {
-          "name": "OTC",
-          "scope": "McDonalds",
-          "tableros": "SAPPlatform_PR1258",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "Solicitado"
+          "permission_id": 6,
+          "project": "RD1-2",
+          "environment": "RD1-2",
+          "client": "MDT01",
+          "version": "V2021",
+          "due_date": "20-20-2020",
+          "priority": "Alta",
+          "url": {
+            "link": "link",
+            "name": "Sandbox 01"
+          },
+          "status": "Si",
+          "comment": ""
         },
         {
-          "name": "Lease Accounting",
-          "scope": "REFX",
-          "tableros": "REFX",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "No"
+          "permission_id": 7,
+          "project": "RD1-3",
+          "environment": "RD1-3",
+          "client": "MDT01",
+          "version": "V2021",
+          "due_date": "20-20-2020",
+          "priority": "Media",
+          "url": {
+            "link": "link",
+            "name": "Sandbox 01"
+          },
+          "status": "Si",
+          "comment": ""
         },
         {
-          "name": "Mantenimiento BTP",
-          "scope": "BTP",
-          "tableros": "BusinessTechnologyPlatform_PR1208",
-          "adGroup": "CIO.AZDO.BusinessTechnologyPlatform.PR1208.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "No"
-        }
-      ],
-      "accesoBTP": [
-        {
-          "subaccount": "Sandbox01",
-          "space": "dev-1",
-          "link": "https://www.google.com",
-          "status": "Si"
-        },
-        {
-          "subaccount": "Sandbox02",
-          "space": "dev-1",
-          "link": "https://www.google.com",
-          "status": "No"
-        },
-        {
-          "subaccount": "Test01",
-          "space": "OTC-Test",
-          "link": "https://www.google.com",
-          "status": "No"
-        },
-        {
-          "subaccount": "Test02",
-          "space": "OTC-Test",
-          "link": "https://www.google.com",
-          "status": "No"
-        }
-      ],
-      "accesoSAP": [
-        {
-          "name": "SAP Logon",
-          "scope": "Gain SAP Logon Program And Access",
-          "link": "https://www.google.com",
-          "status": "No"
-        }
-      ]
-    },
-    {
-      "eid": "tomas.gomez",
-      "cargo": "Consultor SAP",
-      "courses": [
-        {
-          "area": "Advocate",
-          "curso": "When Arrie Met Bari",
-          "prioridad": "Muy Alta",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
-        },
-        {
-          "area": "Advocate",
-          "curso": "When Harrie Met Will II",
-          "prioridad": "Alta",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
-        },
-        {
-          "area": "TQs",
-          "curso": "AI",
-          "prioridad": "Media",
-          "duracion": "1h",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
-        },
-        {
-          "area": "My Workday",
-          "curso": "COBE 1",
-          "prioridad": "Baja",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
-        }
-      ],
-      "accesoADO": [
-        {
-          "name": "SAP Platform",
-          "scope": "Cualquier trabajo",
-          "tableros": "SAPPlatform_PR1258",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "Si"
-        },
-        {
-          "name": "OTC",
-          "scope": "McDonalds",
-          "tableros": "SAPPlatform_PR1258",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "Solicitado"
-        },
-        {
-          "name": "Lease Accounting",
-          "scope": "REFX",
-          "tableros": "REFX",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "No"
-        },
-        {
-          "name": "Mantenimiento BTP",
-          "scope": "BTP",
-          "tableros": "BusinessTechnologyPlatform_PR1208",
-          "adGroup": "CIO.AZDO.BusinessTechnologyPlatform.PR1208.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "No"
-        }
-      ],
-      "accesoBTP": [
-        {
-          "subaccount": "Sandbox01",
-          "space": "dev-1",
-          "link": "https://www.google.com",
-          "status": "Si"
-        },
-        {
-          "subaccount": "Sandbox02",
-          "space": "dev-1",
-          "link": "https://www.google.com",
-          "status": "No"
-        },
-        {
-          "subaccount": "Test01",
-          "space": "OTC-Test",
-          "link": "https://www.google.com",
-          "status": "No"
-        },
-        {
-          "subaccount": "Test02",
-          "space": "OTC-Test",
-          "link": "https://www.google.com",
-          "status": "No"
-        }
-      ],
-      "accesoSAP": [
-        {
-          "name": "SAP Logon",
-          "scope": "Gain SAP Logon Program And Access",
-          "link": "https://www.google.com",
-          "status": "No"
-        }
-      ]
-    },
-    {
-      "eid": "jonathan.perez",
-      "cargo": "Desarrollador UI5",
-      "courses": [
-        {
-          "area": "Advocate",
-          "curso": "When Arrie Met Bari",
-          "prioridad": "Muy Alta",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "Completo"
-        },
-        {
-          "area": "Advocate",
-          "curso": "When Harrie Met Will II",
-          "prioridad": "Alta",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
-        },
-        {
-          "area": "TQs",
-          "curso": "AI",
-          "prioridad": "Media",
-          "duracion": "1h",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
-        },
-        {
-          "area": "My Workday",
-          "curso": "COBE 1",
-          "prioridad": "Baja",
-          "duracion": "30m",
-          "comentarios": "Obligatorio",
-          "link": "https://www.google.com",
-          "estado": "En Progreso"
-        }
-      ],
-      "accesoADO": [
-        {
-          "name": "SAP Platform",
-          "scope": "Cualquier trabajo",
-          "tableros": "SAPPlatform_PR1258",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "Si"
-        },
-        {
-          "name": "OTC",
-          "scope": "McDonalds",
-          "tableros": "SAPPlatform_PR1258",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "Solicitado"
-        },
-        {
-          "name": "Lease Accounting",
-          "scope": "REFX",
-          "tableros": "REFX",
-          "adGroup": "CIO.AZDO.SAPPlatform.PR1258.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "No"
-        },
-        {
-          "name": "Mantenimiento BTP",
-          "scope": "BTP",
-          "tableros": "BusinessTechnologyPlatform_PR1208",
-          "adGroup": "CIO.AZDO.BusinessTechnologyPlatform.PR1208.Developers",
-          "why": "Backlog de Trabajo",
-          "link": "https://www.google.com",
-          "status": "No"
-        }
-      ],
-      "accesoBTP": [
-        {
-          "subaccount": "Sandbox01",
-          "space": "dev-1",
-          "link": "https://www.google.com",
-          "status": "Si"
-        },
-        {
-          "subaccount": "Sandbox02",
-          "space": "dev-1",
-          "link": "https://www.google.com",
-          "status": "No"
-        },
-        {
-          "subaccount": "Test01",
-          "space": "OTC-Test",
-          "link": "https://www.google.com",
-          "status": "No"
-        },
-        {
-          "subaccount": "Test02",
-          "space": "OTC-Test",
-          "link": "https://www.google.com",
-          "status": "No"
-        }
-      ],
-      "accesoSAP": [
-        {
-          "name": "SAP Logon",
-          "scope": "Gain SAP Logon Program And Access",
-          "link": "https://www.google.com",
-          "status": "No"
+          "permission_id": 8,
+          "project": "RD1-4",
+          "environment": "RD1-4",
+          "client": "MDT01",
+          "version": "V2021",
+          "due_date": "20-20-2020",
+          "priority": "Baja",
+          "url": {
+            "link": "link",
+            "name": "Sandbox 01"
+          },
+          "status": "Si",
+          "comment": ""
         }
       ]
     }

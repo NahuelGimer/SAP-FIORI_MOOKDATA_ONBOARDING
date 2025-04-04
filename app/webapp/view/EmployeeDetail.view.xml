@@ -7,29 +7,40 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
 >
-    <Page
+   <Page
         id="tableOnBoardingEmployeeDetail"
         title="{i18n>onBoardingTitleApplication}"
         navButtonPress="onNavPress"
         showNavButton="true"
     >
         <Panel>
-            <HBox class="sapUiSmallMargin">
-                <Text text="{i18n>eid}: {mEmployee>/eid}" />
-                <HBox width="30px" />
-                <Text text="{i18n>position}: {mEmployee>/cargo}" />
+            <HBox
+                class="sapUiSmallMargin"
+                justifyContent="SpaceBetween"
+            >
+                <Text
+                    text="{i18n>eid}: {mEmployee>/employee_eid}"
+                    class="sapUiTinyMarginTop"
+                />
+                <Button
+                    text="{i18n>buttonSave}"
+                    press="onSave"
+                    enabled="false"
+                    id="idButtonSave"
+                    icon="sap-icon://save"
+                />
             </HBox>
         </Panel>
 
         <VBox class="sapUiMediumMargin">
             <Text text="{i18n>trainings}" />
             <HBox class="sapUiSmallMarginTop">
-                <Text text="{mEmployee>/progressTrainings}%" />
+                <Text text="{mEmployee>/progressTraining}%" />
             </HBox>
             <ProgressIndicator
                 visible="{ui>/showTrainings}"
-                percentValue="{mEmployee>/progressTrainings}"
-                state="{path: 'mEmployee>/progressTrainings', formatter: '.formatter.formatState'}"
+                percentValue="{mEmployee>/progressTraining}"
+                state="{path: 'mEmployee>/progressTraining', formatter: '.formatter.formatState'}"
             />
             <HBox class="sapUiTinyMargin">
                 <Title text="{i18n>courses}" />
@@ -37,11 +48,11 @@
             <Table
                 mode="SingleSelectMaster"
                 itemPress="handleListPress"
-                items="{mEmployee>/courses}"
+                items="{mEmployee>/Trainings}"
             >
                 <columns>
                     <Column>
-                        <Text text="{i18n>area}"  />
+                        <Text text="{i18n>area}" />
                     </Column>
                     <Column>
                         <Text text="{i18n>course}" />
@@ -51,9 +62,6 @@
                     </Column>
                     <Column>
                         <Text text="{i18n>duration}" />
-                    </Column>
-                    <Column>
-                        <Text text="{i18n>description}" />
                     </Column>
                     <Column>
                         <Text text="{i18n>link}" />
@@ -68,25 +76,22 @@
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Button press=".handleResizablePopoverPress"
-					        text="{mEmployee>area}"
-					        ariaHasPopup="Dialog" />
-                            <Text text="{mEmployee>curso}" />
+                            <Text text="{mEmployee>task}" />
+                            <Text text="{mEmployee>subtask}" />
                             <ObjectStatus
-                                text="{mEmployee>prioridad}"
-                                state="{path:'mEmployee>prioridad', formatter:'.formatter.formatStatePriority'}"
+                                text="{mEmployee>priority}"
+                                state="{path:'mEmployee>priority', formatter:'.formatter.formatStatePriority'}"
                             />
-                            <Text text="{mEmployee>duracion}" />
-                            <Text text="{mEmployee>comentarios}" />
+                            <Text text="{mEmployee>duration}" />
                             <Link
-                                text="{mEmployee>curso}"
-                                href="{mEmployee>link}"
+                                text="{mEmployee>url/name}"
+                                href="{mEmployee>url/link}"
                                 target="_blank"
                             />
                             <Select
                                 id="_IDGenSelect1"
                                 selectedKey="{mEmployee>status}"
-                                change="onChangeSelect1"
+                                change="onChangeSelect"
                                 valueState="{path: 'mEmployee>status', formatter: '.formatter.formatStateSelect1'}"
                                 valueStateText="{path: 'mEmployee>status', formatter: '.formatter.formatStateTextSelect1'}"
                             >
@@ -149,7 +154,7 @@
             <Table
                 mode="SingleSelectMaster"
                 itemPress="handleListPress"
-                items="{mEmployee>/accesoADO}"
+                items="{mEmployee>/ADOPermissions}"
             >
                 <columns>
                     <Column>
@@ -159,10 +164,10 @@
                         <Text text="{i18n>scope}" />
                     </Column>
                     <Column>
-                        <Text text="{i18n>panels}" />
+                        <Text text="{i18n>adGroup}" />
                     </Column>
                     <Column>
-                        <Text text="{i18n>adGroup}" />
+                        <Text text="{i18n>panels}" />
                     </Column>
                     <Column>
                         <Text text="{i18n>approach}" />
@@ -173,26 +178,27 @@
                     <Column>
                         <Text text="{i18n>status}" />
                     </Column>
+                    <Column>
+                        <Text text="{i18n>comment}" />
+                    </Column>
                 </columns>
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Button press=".handleResizablePopoverPress"
-					        text="{mEmployee>name}"
-					        ariaHasPopup="Dialog" />
+                            <Text text="{mEmployee>resource_name}" />
                             <Text text="{mEmployee>scope}" />
-                            <Text text="{mEmployee>tableros}" />
-                            <Text text="{mEmployee>adGroup}" />
-                            <Text text="{mEmployee>why}" />
+                            <Text text="{mEmployee>ad_group}" />
+                            <Text text="{mEmployee>panel}" />
+                            <Text text="{mEmployee>approach}" />
                             <Link
-                                text="{mEmployee>name}"
-                                href="{mEmployee>link}"
+                                text="{mEmployee>url/name}"
+                                href="{mEmployee>url/link}"
                                 target="_blank"
                             />
                             <Select
                                 id="_IDGenSelect2"
                                 selectedKey="{mEmployee>status}"
-                                change="onEstadoChange"
+                                change="onChangeSelect"
                                 valueState="{path: 'mEmployee>status', formatter: '.formatter.formatStateSelect2'}"
                                 valueStateText="{path: 'mEmployee>status', formatter: '.formatter.formatStateTextSelect2'}"
                             >
@@ -222,6 +228,11 @@
                                     />
                                 </items>
                             </Select>
+                            <Input
+                                valueLiveUpdate="true"
+                                liveChange=".onLiveChangeInputComment"
+                                maxLength="30"
+                            />
                         </cells>
                     </ColumnListItem>
                 </items>
@@ -239,12 +250,12 @@
                 state="{path: 'mEmployee>/progressBTP', formatter: '.formatter.formatState'}"
             />
             <HBox class="sapUiTinyMargin">
-                <Title text="{i18n>accessBTP}" />
+                <Title text="{i18n>BTPPermissions}" />
             </HBox>
             <Table
                 mode="SingleSelectMaster"
                 itemPress="handleListPress"
-                items="{mEmployee>/accesoBTP}"
+                items="{mEmployee>/BTPPermissions}"
             >
                 <columns>
                     <Column>
@@ -259,6 +270,9 @@
                     <Column>
                         <Text text="{i18n>status}" />
                     </Column>
+                    <Column>
+                        <Text text="{i18n>comment}" />
+                    </Column>
                 </columns>
                 <items>
                     <ColumnListItem>
@@ -266,14 +280,14 @@
                             <Text text="{mEmployee>subaccount}" />
                             <Text text="{mEmployee>space}" />
                             <Link
-                                text="{mEmployee>space}"
-                                href="{mEmployee>link}"
+                                text="{mEmployee>url/name}"
+                                href="{mEmployee>url/link}"
                                 target="_blank"
                             />
                             <Select
                                 id="_IDGenSelect3"
                                 selectedKey="{mEmployee>status}"
-                                change="onEstadoChange"
+                                change="onChangeSelect"
                                 valueState="{path: 'mEmployee>status', formatter: '.formatter.formatStateSelect2'}"
                                 valueStateText="{path: 'mEmployee>status', formatter: '.formatter.formatStateTextSelect2'}"
                             >
@@ -303,6 +317,11 @@
                                     />
                                 </items>
                             </Select>
+                            <Input
+                                valueLiveUpdate="true"
+                                liveChange=".onLiveChangeInputComment"
+                                maxLength="30"
+                            />
                         </cells>
                     </ColumnListItem>
                 </items>
@@ -312,12 +331,12 @@
         <VBox class="sapUiMediumMargin">
             <Text text="{i18n>accessSAP}" />
             <HBox class="sapUiSmallMarginTop">
-                <Text text="{mEmployee>/progressSAP}%" />
+                <Text text="{mEmployee>/progressSAPAccess}%" />
             </HBox>
             <ProgressIndicator
                 visible="{ui>/showSAP}"
-                percentValue="{mEmployee>/progressSAP}"
-                state="{path: 'mEmployee>/progressSAP', formatter: '.formatter.formatState'}"
+                percentValue="{mEmployee>/progressSAPAccess}"
+                state="{path: 'mEmployee>/progressSAPAccess', formatter: '.formatter.formatState'}"
             />
             <HBox class="sapUiTinyMargin">
                 <Title text="{i18n>accessSAP}" />
@@ -325,14 +344,11 @@
             <Table
                 mode="SingleSelectMaster"
                 itemPress="handleListPress"
-                items="{mEmployee>/accesoSAP}"
+                items="{mEmployee>/SAPAccessPermissionsDetails}"
             >
                 <columns>
                     <Column>
                         <Text text="{i18n>name}" />
-                    </Column>
-                    <Column>
-                        <Text text="{i18n>scope}" />
                     </Column>
                     <Column>
                         <Text text="{i18n>link}" />
@@ -340,23 +356,23 @@
                     <Column>
                         <Text text="{i18n>status}" />
                     </Column>
+                    <Column>
+                        <Text text="{i18n>comment}" />
+                    </Column>
                 </columns>
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Button press=".handleResizablePopoverPress"
-					        text="{mEmployee>name}"
-					        ariaHasPopup="Dialog" />
-                            <Text text="{mEmployee>scope}" />
+                            <Text text="{mEmployee>title}" />
                             <Link
-                                text="{mEmployee>name}"
-                                href="{mEmployee>link}"
+                                text="{mEmployee>url/name}"
+                                href="{mEmployee>url/link}"
                                 target="_blank"
                             />
                             <Select
                                 id="_IDGenSelect4"
                                 selectedKey="{mEmployee>status}"
-                                change="onEstadoChange"
+                                change="onChangeSelect"
                                 valueState="{path: 'mEmployee>status', formatter: '.formatter.formatStateSelect2'}"
                                 valueStateText="{path: 'mEmployee>status', formatter: '.formatter.formatStateTextSelect2'}"
                             >
@@ -386,6 +402,119 @@
                                     />
                                 </items>
                             </Select>
+                            <Input
+                                valueLiveUpdate="true"
+                                liveChange=".onLiveChangeInputComment"
+                                maxLength="30"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </VBox>
+
+        <VBox class="sapUiMediumMargin">
+            <Text text="{i18n>accessSAP}" />
+            <HBox class="sapUiSmallMarginTop">
+                <Text text="{mEmployee>/progressSAPAmbient}%" />
+            </HBox>
+            <ProgressIndicator
+                visible="{ui>/showSAP}"
+                percentValue="{mEmployee>/progressSAPAmbient}"
+                state="{path: 'mEmployee>/progressSAPAmbient', formatter: '.formatter.formatState'}"
+            />
+            <HBox class="sapUiTinyMargin">
+                <Title text="{i18n>accessSAP}" />
+            </HBox>
+            <Table
+                mode="SingleSelectMaster"
+                itemPress="handleListPress"
+                items="{mEmployee>/SSAPAmbientPermissionsDetails}"
+            >
+                <columns>
+                    <Column>
+                        <Text text="{i18n>project}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>environment}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>client}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>version}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>dueDate}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>priority}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>link}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>status}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>comment}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{mEmployee>project}" />
+                            <Text text="{mEmployee>environment}" />
+                            <Text text="{mEmployee>client}" />
+                            <Text text="{mEmployee>version}" />
+                            <Text text="{mEmployee>due_date}" />
+                            <ObjectStatus
+                                text="{mEmployee>priority}"
+                                state="{path:'mEmployee>priority', formatter:'.formatter.formatStatePriority'}"
+                            />
+                            <Link
+                                text="{mEmployee>url/name}"
+                                href="{mEmployee>url/link}"
+                                target="_blank"
+                            />
+                            <Select
+                                id="_IDGenSelect5"
+                                selectedKey="{mEmployee>status}"
+                                change="onChangeSelect"
+                                valueState="{path: 'mEmployee>status', formatter: '.formatter.formatStateSelect2'}"
+                                valueStateText="{path: 'mEmployee>status', formatter: '.formatter.formatStateTextSelect2'}"
+                            >
+                                <items>
+                                    <core:Item
+                                        id="_IDGenItem18"
+                                        key="{mEmployee>status}"
+                                        text="{mEmployee>status}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem19"
+                                        key="{i18n>yesSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>yesSelection}}"
+                                        text="{i18n>yesSelection}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem20"
+                                        key="{i18n>noSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>noSelection}}"
+                                        text="{i18n>noSelection}"
+                                    />
+                                    <core:Item
+                                        id="_IDGenItem21"
+                                        key="{i18n>solicitedSelection}"
+                                        enabled="{= ${mEmployee>status} !== ${i18n>solicitedSelection}}"
+                                        text="{i18n>solicitedSelection}"
+                                    />
+                                </items>
+                            </Select>
+                            <Input
+                                valueLiveUpdate="true"
+                                liveChange=".onLiveChangeInputComment"
+                                maxLength="30"
+                            />
                         </cells>
                     </ColumnListItem>
                 </items>
