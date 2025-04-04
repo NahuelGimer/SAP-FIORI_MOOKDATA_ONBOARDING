@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Popover
+		id="myResizablePopover"
+		title="{mEmployee>/Trainings/0/task}"
+		class="sapUiResponsivePadding--header sapUiResponsivePadding--footer"
+		placement="Right"
+		resizable="true"
+		initialFocus="close">
+        <Text text="{i18n>text}"></Text>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button
+					id="close"
+					text="Close"
+					press=".handleClose" />
+			</OverflowToolbar>
+		</footer>
+	</Popover>
+</core:FragmentDefinition>

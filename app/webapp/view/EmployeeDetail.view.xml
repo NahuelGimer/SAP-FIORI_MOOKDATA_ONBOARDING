@@ -76,7 +76,7 @@
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Text text="{mEmployee>task}" />
+                            <Button text="{mEmployee>task}" press="handleResizablePopoverPress" />
                             <Text text="{mEmployee>subtask}" />
                             <ObjectStatus
                                 text="{mEmployee>priority}"

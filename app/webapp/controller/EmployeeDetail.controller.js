@@ -51,25 +51,21 @@ sap.ui.define([
         handleResizablePopoverPress: function (oEvent) {
             var oButton = oEvent.getSource(),
                 oView = this.getView(),
-                oModel = this.getOwnerComponent().getModel("mEmployee"); // Obtener el modelo mEmployee
-            var oSelectedEmployee = oModel.getData([0]); // Suponiendo que el primer empleado es el seleccionado
+                oModel = this.getOwnerComponent().getModel("mEmployee"); 
 
-            // Crear el popover solo una vez
             if (!this._pResizablePopover) {
                 this._pResizablePopover = Fragment.load({
                     id: oView.getId(),
-                    name: "app.utils.fragments.nomenclatureDialog",
+                    name: "app.utils.fragments.nomenclatureDialogAdvocate",
                     controller: this
                 }).then(function (oPopover) {
                     oView.addDependent(oPopover);
 
-                    // Enlazar el popover con el contexto del empleado
-                    oPopover.setBindingContext(new sap.ui.model.Context(oModel, "/0")); // Enlazar al primer empleado
+                    oPopover.setBindingContext(new sap.ui.model.Context(oModel, "/0"));
                     return oPopover;
                 });
             }
 
-            // Abrir el popover
             this._pResizablePopover.then(function (oPopover) {
                 oPopover.openBy(oButton);
             });
